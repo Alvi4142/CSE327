@@ -1,6 +1,11 @@
 //getting model
 const basicmodel = require('../model/basicmodel');
 
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ */
 let doctorPrescription = (req, res) => {
     let pageTitle = 'prescription';
     let data = {
@@ -12,7 +17,7 @@ let doctorPrescription = (req, res) => {
 
 let viewPrescription = async (req, res) => {
 
-    let lines = await basicmodel.getLines();
+    let lines = await basicmodel.getLines('Sabit-Bin-Hamid');
     console.log(lines)
     let pageTitle = 'viewprescription';
     let data = {
@@ -31,9 +36,12 @@ let insertInformation = async (req, res) => {
     res.redirect('/prescription',);
 };
 
+
+
 module.exports = {
 
     doctorPrescription,
     viewPrescription,
     insertInformation,
+
 }
