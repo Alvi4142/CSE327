@@ -2,10 +2,8 @@
 const express = require('express');
 const app = express();
 
-
 //setting up view engine
 app.set('view engine', 'ejs');
-
 
 
 //setting middlewares
@@ -14,12 +12,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-
 //importing routrs
 const prescriptionRouter = require('./routers/prescriptionRouter.js');
 //using routers
 app.use(prescriptionRouter)
-
 
 
 //Show werror for undefine action

@@ -13,21 +13,16 @@ let insertPrescription = async (doc_name,patient_id,consultation_date,prescripti
 /**
  * 
  */
-let getLines = async (doc_name,patient_id,consultation_date,prescription) => {
+let getLines = async (uid) => {
+    console.log('user id'+uid)
     let sqlCommand = `SELECT doc_name,patient_id,consultation_date,
-                     prescription FROM doc_presc;`;
+                     prescription FROM doc_presc WHERE patient_id='${uid}';`;
     let result = await query(sqlCommand);
-    return result;
+    console.log(result)
+    return result
 }
-
-// let getUserName = async (name) => {
-//     let sqlCommand = `SELECT name FROM user WHERE id='43434';`;
-//     let result = await query(sqlCommand);
-//     return result;
-// }
 
 module.exports = {
     insertPrescription,
     getLines,
-    // getUserName,
 }

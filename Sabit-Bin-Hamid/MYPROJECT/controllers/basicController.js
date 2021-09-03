@@ -11,8 +11,8 @@ let doctorPrescription = (req, res) => {
 
 
 let viewPrescription = async (req, res) => {
-
-    let lines = await basicmodel.getLines();
+    console.log(req.params)
+    let lines = await basicmodel.getLines(req.params.id);
     console.log(lines)
     let pageTitle = 'viewprescription';
     let data = {
