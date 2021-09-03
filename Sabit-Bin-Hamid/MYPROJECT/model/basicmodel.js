@@ -2,9 +2,9 @@
 const {query} = require('../helper/db.js')
 
 
-let insertPrescription = async (doc_name,patient_id,consultation_date,prescription) => {
-    let sqlCommand = `INSERT INTO doc_presc(doc_name, patient_id,consultation_date,prescription)
-                   VALUES ('${doc_name}','${patient_id}','${consultation_date}','${prescription}');`;
+let insertPrescription = async (patient_name,patient_id,consultation_date,prescription) => {
+    let sqlCommand = `INSERT INTO prescription(patient_name, patient_id,consultation_date,prescription)
+                   VALUES ('${patient_name}','${patient_id}','${consultation_date}','${prescription}');`;
     let result = await query(sqlCommand);
     return result;
 }
@@ -15,8 +15,8 @@ let insertPrescription = async (doc_name,patient_id,consultation_date,prescripti
  */
 let getLines = async (uid) => {
     console.log('user id'+uid)
-    let sqlCommand = `SELECT doc_name,patient_id,consultation_date,
-                     prescription FROM doc_presc WHERE patient_id='${uid}';`;
+    let sqlCommand = `SELECT patient_name,patient_id,consultation_date,
+                     prescription FROM prescription WHERE patient_id='${uid}';`;
     let result = await query(sqlCommand);
     console.log(result)
     return result

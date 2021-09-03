@@ -5,7 +5,7 @@ const db = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "",
-    database: "doctorprescription",
+    database: "medlink",
     connectionLimit: 10
 });
 //binding database for using async and await
