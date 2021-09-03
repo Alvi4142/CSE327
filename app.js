@@ -12,9 +12,13 @@ app.use(express.json());
 
  //importing routers
  const searchDoctorRoutes = require("./routers/searchDoctorRoutes.js");
+ const searchHospitalRoutes = require("./routers/searchHospitalRoutes.js");
+ const searchMedicineRoutes = require("./routers/searchMedicineRoutes.js");
 
  //using routers
  app.use(searchDoctorRoutes);
+ app.use(searchHospitalRoutes);
+ app.use(searchMedicineRoutes);
 
 
 app.use((req,res) =>{

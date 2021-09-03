@@ -51,6 +51,7 @@
                                 <tr>
                                     <th>Serial</th>
                                     <th>Doctor's Name</th>
+                                    <th>Specialist</th>
                                     <th>Address 01</th>
                                     <th>Address 02</th>
                                 </tr>
@@ -58,9 +59,11 @@
                             <tbody>
                               <% data.searchresult.forEach(s=> {  %>
                         <tr>
-                            <td><%= s.id %></td>
-                            <td><%= s.name %></td>
-                            <td><%= s.address %></td>
+                            <td><%= s.doc_id %></td>
+                            <td><%= s.doc_name %></td>
+                            <td><%= s.subject %></td>
+                            <td><%= s.chamber1 %></td>
+                            <td><%= s.chamber2 %></td>
                             
                         </tr>
                         <% });}} %>
