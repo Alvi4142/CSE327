@@ -14,11 +14,18 @@ app.use(express.json());
  const searchDoctorRoutes = require("./routers/searchDoctorRoutes.js");
  const searchHospitalRoutes = require("./routers/searchHospitalRoutes.js");
  const searchMedicineRoutes = require("./routers/searchMedicineRoutes.js");
+ const paymentRoutes = require("./routers/paymentRoutes.js");
 
+ 
+ 
+ 
+ 
+ 
  //using routers
  app.use(searchDoctorRoutes);
  app.use(searchHospitalRoutes);
  app.use(searchMedicineRoutes);
+ app.use(paymentRoutes);
 
 
 app.use((req,res) =>{
