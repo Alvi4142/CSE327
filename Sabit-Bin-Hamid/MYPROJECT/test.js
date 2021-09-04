@@ -1,8 +1,15 @@
-SELECT name, date, prescription FROM doc_presc WHERE 1
+// SELECT name, date, prescription FROM doc_presc WHERE 1
 
 
-name: 'sas',
-    date: '2021-09-02',
-    prescription: 'sacas'
+// name: 'sas',
+//     date: '2021-09-02',
+//     prescription: 'sacas'
 
-    SELECT name, date, prescription FROM doc_presc WHERE 1
+//     SELECT name, date, prescription FROM doc_presc WHERE
+    
+
+
+
+//     "test": "echo \"Error: no test specified\" && exit 1",
+    
+//     "name": "myproject",
