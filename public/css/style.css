@@ -70,7 +70,7 @@ ul li a:hover{
     width: 300x;
     position: absolute;
     margin-top: 240px;
-    margin-left: 600px;
+    margin-left: 470px;
 }
 
 .srch{
@@ -117,7 +117,7 @@ ul li a:hover{
 .table{
     border-collapse: collapse;
     margin-top: 350px;
-    margin-left: 160px;
+    margin-left: 310px;
     
 
     font-size: 16px;
@@ -150,6 +150,67 @@ td{
     color: white;
     
 }
+.Review {
+    
+    top: 65%;
+    left: 45%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 500px;   
+    width: 10%;
+  
+           
+    }
+    
+/*REVIEW PART*/
+.Review h2{
+    border: 0;
+   padding: 10px 25px;
+  font-style: BOLD;
+   font-size: 25px;
+   border-radius: 5px;
+   color: #fff;
+   margin-left: 160px;
+}
+.Review input{
+    width: 300%;
+    height: 50px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #86b0b6;
+
+}
+.Review input:focus
+{
+    border: 1px solid #000;
+    outline: 0;
+}
+.Review textarea
+{
+    width: 300%;
+    height: 150px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #86b0b6;
+
+}
+.Review button
+{
+   border: 0;
+   padding: 10px 30px;
+   background: #86b0b6;
+   font-size: 18px;
+   border-radius: 5px;
+   color: #fff;
+   margin-left: 160px;
+}
+.Review button:hover
+{
+    background-color: #718a8e ;
+}
+
 
 /* //new */
 .create-post-header{
@@ -159,7 +220,7 @@ td{
     
     color: whitesmoke;
     justify-content: center;
-    margin-left: 480px;
+    margin-left: 210px;
     width: 180px;
     height: 30px;
     border: 1px solid #ff7200;

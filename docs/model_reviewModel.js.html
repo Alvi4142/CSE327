@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: model/reviewModel.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,48 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: model/reviewModel.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>//connecting database
+
+const {query} = require('../helper/db.js')
+
+/**
+ * 
+ * @param {string} Name -- inserting Name
+ * @param {string} Email -- inserting Email
+ * @param {string} Review -- inserting Review
+ * @returns -- checking ReviewInfo
+ */
+let insertReview = async (Name,Email,Review) =>{
+    sqlCommand = `INSERT INTO blog(Name, Email, Review) VALUES ('${Name}','${Email}','${Review}')`;
+    let result = await query(sqlCommand);
+    console.log(result);
+    return result; 
+}
+let getLines = async () => {
+    let sqlCommand =`SELECT Name, Email, Review FROM blog`;
+    let result = await query(sqlCommand);
+    console.log(result)
+    return result;
+}
 
 
-    <h3> </h3>
 
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports = {
+    insertReview,
+    getLines
+}</code></pre>
+        </article>
+    </section>
 
 
 

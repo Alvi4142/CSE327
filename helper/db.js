@@ -1,6 +1,4 @@
-/**
- * importing database connection
- */
+//importing database connection
 const util = require("util");
 const mysql = require("mysql");
 const db = mysql.createPool({
@@ -10,13 +8,9 @@ const db = mysql.createPool({
     database: "medlink",
     connectionLimit: 10
 });
-/**
- * binding database for using async and await
- */
+//binding database for using async and await
 const query = util.promisify(db.query).bind(db);
-/**
- * exports module
- */
+
 module.exports = {
     query
 }
