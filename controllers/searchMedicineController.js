@@ -1,5 +1,13 @@
+/**
+ * including model
+ */
 const searchMedicineModel = require("../model/searchMedicineModel.js");
 
+/**
+ * 
+ * @param {object} req -passing obj data
+ * @param {object} res -passing obj data
+ */
 let searchMedicine = async (req , res)=>
 {
     console.log(req.body);
@@ -16,6 +24,11 @@ let searchMedicine = async (req , res)=>
     res.render("searchMedicine.ejs" , { data });
 }
 
+/**
+ * 
+ * @param {object} req -passing req data
+ * @param {object} res -passing res data
+ */
 let homeMedicine =  (req, res) =>{
   // let names = ["Mahin", "Alvi", "User1"];
 
@@ -30,6 +43,9 @@ let homeMedicine =  (req, res) =>{
   res.render("searchMedicine.ejs", {data});
 }
 
+/**
+ * exports module
+ */
 module.exports =
 {
   searchMedicine,

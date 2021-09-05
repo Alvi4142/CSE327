@@ -1,7 +1,13 @@
-//connecting database
+/**
+ * connecting database
+ */
 const {query} = require("../helper/db.js");
 
-
+/**
+ * 
+ * @param {string} name -search hospital
+ * @returns hospital data
+ */
 
 let getHospitalData = async (name) =>{
     sqlCommand = `SELECT hospital_id, name, address FROM hospital WHERE name LIKE "%${name}%" `;
@@ -12,7 +18,9 @@ let getHospitalData = async (name) =>{
 }
 
 
-
+/**
+ * exports module
+ */
 module.exports = {
     getHospitalData,
     

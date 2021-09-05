@@ -1,12 +1,21 @@
-//including model
+/**
+ * including model
+ */
 const paymentModel = require("../model/paymentModel.js");
 
-//including helpers
-//const {id} = require("../helper/activeUser.js");
+
+/**
+ * including helpers
+ */
 const {Publishable_Key, stripe} = require("../helper/stripe.js");
+
 const {id }= require("../helper/user.js");
 
-
+/**
+ * 
+ * @param {object} req -passing req data
+ * @param {object} res -passing res data
+ */
 let showPayForm = async (req, res)=>{
 
     let ID = id;
@@ -23,7 +32,11 @@ let showPayForm = async (req, res)=>{
 
 }
 
-
+/**
+ * 
+ * @param {object} req -passing req data
+ * @param {object} res -passing res data
+ */
 let pay = async (req, res)=>{
 
     let ID = id;
@@ -49,7 +62,11 @@ let pay = async (req, res)=>{
 
 
 }
-
+/**
+ * 
+ * @param {object} req -passing req data
+ * @param {object} res -passing res data
+ */
 let payment = async (req, res) => { 
 
     let ID = id;
@@ -80,6 +97,7 @@ let payment = async (req, res) => {
             
         }); 
     }) 
+   
     .then( async (charge) => { 
         // console.log("The charge is ");
         // console.log(charge);
@@ -94,7 +112,9 @@ let payment = async (req, res) => {
         res.send(err)    // If some error occurs 
     }); 
 }
-
+/**
+ * exports module
+ */
 module.exports = {
     showPayForm,
     pay,
