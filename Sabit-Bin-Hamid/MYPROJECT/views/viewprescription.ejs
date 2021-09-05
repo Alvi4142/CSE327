@@ -20,12 +20,12 @@
                     </tr>
                 </thead>
 
-                <% data.lines.forEach(line=>{ %>
+                <% data.prescription.forEach(prescriptions=>{ %>
                     <tbody>
                         <tr>
-                            <td><%= line.patient_name %> </td>
-                            <td><%= line.consultation_date %> </td>
-                            <td><%= line.prescription %> </td>
+                            <td><%= prescriptions.patient_name %> </td>
+                            <td><%= prescriptions.consultation_date %> </td>
+                            <td><%= prescriptions.prescription %> </td>
                         </tr>
                     </tbody>
 

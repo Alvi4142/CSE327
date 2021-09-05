@@ -166,7 +166,7 @@
 
 
 <div class="description">
-    <p>Include external modules that exist in separate files.</p>
+    <p>Include prescriptionMode.js external modules that exist in module files.</p>
 </div>
 
 
@@ -407,68 +407,6 @@
 
 
         
-            
-<h4 class="name" id="viewPrescription"><span class="type-signature">(async, constant) </span>viewPrescription<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    <p>Patient view prescription according id</p>
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controllers_prescriptionController.js.html">controllers/prescriptionController.js</a>, <a href="controllers_prescriptionController.js.html#line28">line 28</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
     
 
     
@@ -564,7 +502,7 @@
             
 
             <td class="description last"><p>Send the rendered view to the client and pass a local
-variable Page title and data to the view.</p></td>
+variable Page title and data to the view , response 200.</p></td>
         </tr>
 
     
@@ -641,7 +579,7 @@ variable Page title and data to the view.</p></td>
     
 
     
-    <h4 class="name" id="getLines"><span class="type-signature">(async) </span>getLines<span class="signature">(userid)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="getPrescription"><span class="type-signature">(async) </span>getPrescription<span class="signature">(userid)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
@@ -925,7 +863,7 @@ with specified status, 200 HTTP status code. If not specified, status defaults t
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controllers_prescriptionController.js.html">controllers/prescriptionController.js</a>, <a href="controllers_prescriptionController.js.html#line45">line 45</a>
+        <a href="controllers_prescriptionController.js.html">controllers/prescriptionController.js</a>, <a href="controllers_prescriptionController.js.html#line50">line 50</a>
     </li></ul></dd>
     
 
@@ -1160,7 +1098,7 @@ with specified status, 200 HTTP status code. If not specified, status defaults t
 
         
 <div class="param-desc">
-    <p>Result is patiet name,id,date and prescription</p>
+    <p>Result is patiet name, id, date and prescription</p>
 </div>
 
 
@@ -1184,6 +1122,167 @@ with specified status, 200 HTTP status code. If not specified, status defaults t
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="viewPrescription"><span class="type-signature">(async) </span>viewPrescription<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Patient view prescription according id</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Request</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Returns the value of params id when present.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Respose</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Send the rendered view to the client and pass  local
+variable to the view successfully response 200.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_prescriptionController.js.html">controllers/prescriptionController.js</a>, <a href="controllers_prescriptionController.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -1199,13 +1298,13 @@ with specified status, 200 HTTP status code. If not specified, status defaults t
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#basicController">basicController</a></li><li><a href="global.html#basicModel">basicModel</a></li><li><a href="global.html#doctorPrescription">doctorPrescription</a></li><li><a href="global.html#express">express</a></li><li><a href="global.html#getLines">getLines</a></li><li><a href="global.html#insertInformation">insertInformation</a></li><li><a href="global.html#insertPrescription">insertPrescription</a></li><li><a href="global.html#prescriptionRouter">prescriptionRouter</a></li><li><a href="global.html#viewPrescription">viewPrescription</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#basicController">basicController</a></li><li><a href="global.html#basicModel">basicModel</a></li><li><a href="global.html#doctorPrescription">doctorPrescription</a></li><li><a href="global.html#express">express</a></li><li><a href="global.html#getPrescription">getPrescription</a></li><li><a href="global.html#insertInformation">insertInformation</a></li><li><a href="global.html#insertPrescription">insertPrescription</a></li><li><a href="global.html#prescriptionRouter">prescriptionRouter</a></li><li><a href="global.html#viewPrescription">viewPrescription</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sun Sep 05 2021 11:10:21 GMT+0600 (Bangladesh Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sun Sep 05 2021 17:41:03 GMT+0600 (Bangladesh Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
