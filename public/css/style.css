@@ -70,7 +70,7 @@ ul li a:hover{
     width: 300x;
     position: absolute;
     margin-top: 240px;
-    margin-left: 470px;
+    margin-left: 600px;
 }
 
 .srch{
@@ -117,7 +117,7 @@ ul li a:hover{
 .table{
     border-collapse: collapse;
     margin-top: 350px;
-    margin-left: 310px;
+    margin-left: 160px;
     
 
     font-size: 16px;
@@ -159,7 +159,7 @@ td{
     
     color: whitesmoke;
     justify-content: center;
-    margin-left: 210px;
+    margin-left: 480px;
     width: 180px;
     height: 30px;
     border: 1px solid #ff7200;

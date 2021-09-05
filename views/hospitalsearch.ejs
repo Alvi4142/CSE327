@@ -10,13 +10,13 @@
             <%- include("./partial/navbar.ejs") %> 
             <div class="search">
 
-                <form action="/searchDoctor" method="post">
+                <form action="/searchHospital" method="post">
                 
-                <input class="srch" type="search" name="q" placeholder="Hospital Name">
+                <input class="srch" type="search" name="q" placeholder="Hospital Name" required>
                 <a href="#"><button class="btn">Search</button></a>
             </form>
             </div>
-
+            
             <div class="table">
                     
                     
@@ -49,7 +49,7 @@
                             <tbody>
                               <% data.searchresult.forEach(s=> {  %>
                         <tr>
-                            <td><%= s.id %></td>
+                            <td><%= s.hospital_id %></td>
                             <td><%= s.name %></td>
                             <td><%= s.address %></td>
                             

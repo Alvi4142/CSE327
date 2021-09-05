@@ -51,16 +51,19 @@
                                 <tr>
                                     <th>Serial</th>
                                     <th>Medicine's Name</th>
-                                    <th>Address 01</th>
-                                    <th>Address 02</th>
+                                    <th>Generic Name</th>
+                                    <th>Alter. Brands</th>
+                                    <th>SideEffects</th>
                                 </tr>
                             </thead> 
                             <tbody>
                               <% data.searchresult.forEach(s=> {  %>
                         <tr>
-                            <td><%= s.id %></td>
-                            <td><%= s.name %></td>
-                            <td><%= s.address %></td>
+                            <td><%= s.med_id %></td>
+                            <td><%= s.med_name %></td>
+                            <td><%= s.generic_name %></td>
+                            <td><%= s.alternative_brands %></td>
+                            <td><%= s.side_effects %></td>
                             
                         </tr>
                         <% });}} %>
