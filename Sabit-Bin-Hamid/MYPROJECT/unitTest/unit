@@ -1,0 +1,5 @@
+// const getPrescription= require("./model/prescriptionModel")
+// test('show output user id', () => {
+//     let text = getPrescription('123');
+//     expect(text).toBe('name sabit , id 123, date 1-1-2021, details');
+// })

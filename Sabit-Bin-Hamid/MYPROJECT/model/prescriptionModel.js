@@ -29,8 +29,7 @@ let getPrescription = async (userid) => {
     let sqlCommand = `SELECT patient_name,patient_id,consultation_date,
                      prescription FROM prescription WHERE patient_id='${userid}';`;
     let result = await query(sqlCommand);
-    console.log(result)
-    return result
+    return result;
 }
 
 /**
