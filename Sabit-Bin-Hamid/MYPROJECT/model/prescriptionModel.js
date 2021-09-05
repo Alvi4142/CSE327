@@ -7,7 +7,7 @@ const {query} = require('../helper/db.js')
 /**
  * This function will insert  Prescription details in database given by doctor.
  * @param {string} patientName -  Insert patient name in database
- * @param {string} patientId -  Insert patientId in database
+ * @param {number} patientId -  Insert patientId in database
  * @param {string} consultationDate - Target is insert consultationDate insert in database
  * @param {string} prescription - Target is insert patient prescription in database
  * @returns {string}  Result is patiet name, id, date and prescription
@@ -21,7 +21,7 @@ let insertPrescription = async (patientName,patientId,consultationDate,prescript
 
 /**
  * This function select or fetch data from database prescription table according to user id.
- * @param {string} userid - target is user get prescriptin according this id 
+ * @param {number} userid - target is user get prescriptin according this id 
  * @returns {string} result is user id
  */
 let getPrescription = async (userid) => {

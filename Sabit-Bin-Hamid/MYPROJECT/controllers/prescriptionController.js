@@ -6,8 +6,8 @@ const basicModel = require('../model/prescriptionModel');
 
 /**
  * Doctor prescription HTTP render doctorprescription.ejs
- * @param {Request} req - Not use here. 
- * @param {Respose} res - Send the rendered view to the client and pass a local
+ * @param {Object} req - Not use here. 
+ * @param {Object} res - Send the rendered view to the client and pass a local
  * variable Page title and data to the view , response 200. 
  */
 let doctorPrescription = (req, res) => {
@@ -22,8 +22,8 @@ let doctorPrescription = (req, res) => {
 
 /**
  * Patient view prescription according id
- * @param {Request} req - Returns the value of params id when present.
- * @param {Respose} res - Send the rendered view to the client and pass  local
+ * @param {Object} req - Returns the value of params id when present.
+ * @param {Object} res - Send the rendered view to the client and pass  local
  *  variable to the view successfully response 200.
  */
 let viewPrescription = async (req, res) => {
@@ -43,8 +43,8 @@ let viewPrescription = async (req, res) => {
 
 /**
  * Get Information and prescription of patient post by doctor. 
- * @param {Request} req - No description.
- * @param {Response} res - Redirects to the URL derived from the specified path, 
+ * @param {Object} req - No description.
+ * @param {Object} res - Redirects to the URL derived from the specified path, 
  * with specified status, 200 HTTP status code. If not specified, status defaults to “404 “Found”.
  */
 let insertInformation = async (req, res) => {
