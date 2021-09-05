@@ -3,6 +3,13 @@
  */
 const basicModel = require('../model/prescriptionModel');
 
+
+/**
+ * Doctor prescription HTTP render doctorprescription.ejs
+ * @param {Request} req - Not use here. 
+ * @param {Respose} res - Send the rendered view to the client and pass a local
+ * variable Page title and data to the view.
+ */
 let doctorPrescription = (req, res) => {
     let pageTitle = 'prescription';
     let data = {
@@ -14,21 +21,14 @@ let doctorPrescription = (req, res) => {
 
 /**
  * Patient view prescription according id
- * @param {Request} req -Returns the value of params id when present.
+ * @param {Request} req - Returns the value of params id when present.
  * @param {Respose} res - Send the rendered view to the client and pass a local variable to the view.
+ * @const 
  */
 let viewPrescription = async (req, res) => {
     let lines = await basicModel.getLines(req.params.id);
     console.log(lines)
-    /**
-     * Page title
-     * @type {string}
-     */
     let pageTitle = 'viewprescription';
-    /**
-     * Data object
-     *@type {{pageTitle: string , lines: string}}
-     */
     let data = {
         pageTitle,
         lines,
@@ -53,7 +53,6 @@ let insertInformation = async (req, res) => {
 
 
 /**
- * Export module
  * Export doctorPrescription,viewPrescription and insertInformation function.
  */
 module.exports = {

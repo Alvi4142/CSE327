@@ -10,33 +10,45 @@ const app = express();
 app.set('view engine', 'ejs');
 
 /**
- * Setting middlewares.
+ * Setting for middlewares.
  */
 app.use(express.static('./public'))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 /**
- * Importing routrs.
+ * Importing routrs and get path in prescriptionRouter
  */
 const prescriptionRouter = require('./routers/prescriptionRouter.js');
 
+
 /**
- * Using routers
+ * load the 'prescriptionRouter' router on the parent app.
  */
 app.use(prescriptionRouter)
 
 /**
  * For any undefined action in browser this will show an error
  * and render 404.ejs.
+ * @param {Request} req - No description.
+ * @param {Respose} res - Send the rendered view to the client render 404.ejs.
  */
 app.use((req, res) => {
     res.render('404.ejs')
 })
 
 /**
- * Here server connection is create and port is 3000.
+ * Binds and listens for connections on the specified host and port:3000.
+ * The app.listen() method returns an http.Server object 
+ * @param {int} 3000 - Port
+ * @param {string} err - show an error 
  */
 app.listen(3000, (err) => {
-    console.log('the surver is up at localhost:3000')
+    if (err) {
+        console.log(err)
+    }
+    else {
+        console.log('the surver is up at localhost:3000')
+    }
+    
 })
