@@ -1,46 +1,35 @@
-/**
- * require express app
- */
+//require express app
 const express =require("express");
 const app = express();
 
-/**
- * setting up view engine
- */
+//setting up view engine
 app.set("view engine","ejs");
 
-/**
- * setting middlewares
- */
+//setting middlewares
 app.use(express.static("./public"));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-/**
- * importing routers
- */
- const searchDoctorRoutes = require("./routers/searchDoctorRoutes.js");
- const searchHospitalRoutes = require("./routers/searchHospitalRoutes.js");
- const searchMedicineRoutes = require("./routers/searchMedicineRoutes.js");
- const paymentRoutes = require("./routers/paymentRoutes.js");
+//  //importing routers
+//  const searchDoctorRoutes = require("./routers/searchDoctorRoutes.js");
+ const userRegRoutes = require("./routers/userRegRoutes.js")
+ const docRegRoutes = require("./routers/docRegRoutes.js")
 
- 
- 
- 
- 
- 
-/**
- * using routers
- */
- app.use(searchDoctorRoutes);
- app.use(searchHospitalRoutes);
- app.use(searchMedicineRoutes);
- app.use(paymentRoutes);
+const loginRoutes = require("./routers/loginRoutes.js");
+const homeRoutes = require("./routers/homeRoutes.js");
+const appointmentRoutes = require("./routers/appointmentRoutes.js");
+const viewAppointmentRoutes = require("./routers/viewAppointmentRoutes.js");
 
-/**
- * error check
- */
-app.use((req,res) =>{
+//  //using routers
+//  app.use(searchDoctorRoutes);
+ app.use(userRegRoutes);
+ app.use(docRegRoutes);
+ app.use(loginRoutes);
+ app.use(homeRoutes);
+ app.use(appointmentRoutes);
+ app.use(viewAppointmentRoutes);
+
+app.use((req,res) =>{ 
     res.render("404.ejs")
 })
 

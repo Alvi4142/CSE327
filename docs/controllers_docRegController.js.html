@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Tutorial: starting--guide</title>
+    <title>JSDoc: Source: controllers/docRegController.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,21 +17,66 @@
 
 <div id="main">
 
-    <h1 class="page-title">Tutorial: starting--guide</h1>
+    <h1 class="page-title">Source: controllers/docRegController.js</h1>
 
+    
+
+
+
+    
     <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const docRegModel = require("../model/docRegModel.js");
+/**
+ * 
+ * @param {object} req - passing datas as object
+ * @param {object} res - getting and inputing res object
+ */
+let docReg = async (req , res)=>
+{
 
-<header>
+    let email = req.body.demail;
+    let name = req.body.dname;
+    let phonenumber = req.body.dnumber;
+    let address = req.body.daddress;
+    let address2 = req.body.daddress2;
+    let password = req.body.dpassword;
+    let special = req.body.dspecialist;
+    let query = await docRegModel.registerDocData(email, name, phonenumber, address,address2, password,special);
+
+    let data = {
+      query
+    }
+     res.render("docRegistration.ejs", {data} );
+   
+
+    
+}
+let homeDocReg = async (req , res)=>
+{
     
 
-    <h2>starting--guide</h2>
-</header>
+  let pageTitle = "Doc Registration";
+  
+  let data = {
+      pageTitle
+      
+  }
+     res.render("DocRegistration.ejs", {data} );
 
-<article>
+
     
-</article>
+}
+module.exports =
+{
+  docReg,
+  homeDocReg
+}</code></pre>
+        </article>
+    </section>
 
-</section>
+
+
 
 </div>
 

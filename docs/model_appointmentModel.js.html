@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Tutorial: starting--guide</title>
+    <title>JSDoc: Source: model/appointmentModel.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,21 +17,45 @@
 
 <div id="main">
 
-    <h1 class="page-title">Tutorial: starting--guide</h1>
+    <h1 class="page-title">Source: model/appointmentModel.js</h1>
 
+    
+
+
+
+    
     <section>
-
-<header>
+        <article>
+            <pre class="prettyprint source linenums"><code>//connecting database
+const {query} = require("../helper/db.js");
+/**
+ * 
+ * @param {id number} id - passing doc id
+ * @param {string} doctor_name - passing doctor name
+ * @param {date} date - passing appointment date
+ * @param {string} patient_name - passing patient name
+ */
+let appointment = async (id,doctor_name,date,patient_name) =>{
     
+    sqlCommand=  `INSERT INTO appointment( doctor_id, doctor_name, appointment_date, patient_name) VALUES ('${id}','${doctor_name}','${date}','${patient_name}');`;
+   
+   let result = await query(sqlCommand);
+   if(result)
+   {
+       console.log("successfully registered");
+   }
+}
 
-    <h2>starting--guide</h2>
-</header>
 
-<article>
+module.exports = {
+    appointment
     
-</article>
+}</code></pre>
+        </article>
+    </section>
 
-</section>
+
+
 
 </div>
 

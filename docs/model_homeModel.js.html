@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Tutorial: starting--guide</title>
+    <title>JSDoc: Source: model/homeModel.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,21 +17,55 @@
 
 <div id="main">
 
-    <h1 class="page-title">Tutorial: starting--guide</h1>
+    <h1 class="page-title">Source: model/homeModel.js</h1>
 
+    
+
+
+
+    
     <section>
-
-<header>
+        <article>
+            <pre class="prettyprint source linenums"><code>//connecting database
+const {query} = require("../helper/db.js");
+/**
+ * 
+ * @param {string} val - checking logininfo
+ * @returns login info
+ */
+/**
+ * 
+ * @param {string} val - checking logininfo
+ * @returns result
+ */
+let getLogininfo1  = async (val) =>{
+    let sqlCommand = `SELECT email,password FROM user_info WHERE email LIKE "%${val}%" `;
     
+    let result = await query(sqlCommand);
+    console.log(result);
+    return result; 
 
-    <h2>starting--guide</h2>
-</header>
+}
 
-<article>
+let getLogininfo2  = async (val) =>{
+    let sqlCommand = `SELECT email,password FROM doc_info WHERE email LIKE "%${val}%" `;
     
-</article>
+    let result = await query(sqlCommand);
+    console.log(result);
+    return result; 
 
-</section>
+}
+
+module.exports = {
+    getLogininfo1,
+    getLogininfo2
+    
+} </code></pre>
+        </article>
+    </section>
+
+
+
 
 </div>
 

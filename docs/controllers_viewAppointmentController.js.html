@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Tutorial: starting--guide</title>
+    <title>JSDoc: Source: controllers/viewAppointmentController.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,21 +17,62 @@
 
 <div id="main">
 
-    <h1 class="page-title">Tutorial: starting--guide</h1>
+    <h1 class="page-title">Source: controllers/viewAppointmentController.js</h1>
 
+    
+
+
+
+    
     <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const viewAppointmentModel = require("../model/viewAppointmentModel.js");
 
-<header>
+/**
+ * 
+ * @param {object} req - passing and checking object at req data
+ * @param {object} res - passing and checking object as res data
+ */
+let appointmentView = async (req , res)=>
+{
+    console.log(req.body);
     
+    let searchQuery = req.body.q;
+    let searchresult = await viewAppointmentModel.getAppointmentData(searchQuery);
+    let pageTitle = "Appointment Search";
+    let title ="Appointment  List"
+    let data = {
+      pageTitle,
+      title,
+      searchresult
+    };
+    res.render("viewAppointment.ejs" , { data });
+}
 
-    <h2>starting--guide</h2>
-</header>
+let homeView =  (req, res) =>{
+  // let names = ["Mahin", "Alvi", "User1"];
 
-<article>
-    
-</article>
+  //let lines = await basicModel.getLines();
 
-</section>
+  let pageTitle = "Appointment Search";
+  let title ="Appointment  List"
+  let data = {
+      pageTitle,
+      title 
+  }
+  res.render("viewAppointment.ejs", {data});
+}
+
+module.exports =
+{
+  appointmentView,
+  homeView
+}</code></pre>
+        </article>
+    </section>
+
+
+
 
 </div>
 

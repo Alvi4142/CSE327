@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Tutorial: starting--guide</title>
+    <title>JSDoc: Source: model/viewAppointmentModel.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,21 +17,45 @@
 
 <div id="main">
 
-    <h1 class="page-title">Tutorial: starting--guide</h1>
+    <h1 class="page-title">Source: model/viewAppointmentModel.js</h1>
 
+    
+
+
+
+    
     <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>//connecting database
+const {query} = require("../helper/db.js");
 
-<header>
+/**
+ * 
+ * @param {number} id - passing and checking doctor id
+ * @returns 
+ */
+
+let getAppointmentData = async (id) =>{
+    sqlCommand = `SELECT patient_name, appointment_date FROM appointment WHERE doctor_id = ${id}  `;
+     
+    let result = await query(sqlCommand);
     
+    return result; 
 
-    <h2>starting--guide</h2>
-</header>
+}
 
-<article>
+
+
+module.exports = {
+    getAppointmentData,
     
-</article>
+}
+</code></pre>
+        </article>
+    </section>
 
-</section>
+
+
 
 </div>
 

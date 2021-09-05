@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Tutorial: starting--guide</title>
+    <title>JSDoc: Source: routers/docRegRoutes.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,21 +17,34 @@
 
 <div id="main">
 
-    <h1 class="page-title">Tutorial: starting--guide</h1>
+    <h1 class="page-title">Source: routers/docRegRoutes.js</h1>
 
+    
+
+
+
+    
     <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const express = require("express");
+const router = express.Router();
+/**
+ * routing controller
+ */
+//getting controllers
+const docRegController = require("../controllers/docRegController.js");
+router.get("/docReg", docRegController.homeDocReg);
+router.post("/docReg", docRegController.docReg);
+//router.get("/hospitalsearch",basicControllers.hospitalSearch);
 
-<header>
-    
 
-    <h2>starting--guide</h2>
-</header>
 
-<article>
-    
-</article>
+module.exports = router;</code></pre>
+        </article>
+    </section>
 
-</section>
+
+
 
 </div>
 

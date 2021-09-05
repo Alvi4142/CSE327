@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Tutorial: starting--guide</title>
+    <title>JSDoc: Source: controllers/userRegController.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,21 +17,67 @@
 
 <div id="main">
 
-    <h1 class="page-title">Tutorial: starting--guide</h1>
+    <h1 class="page-title">Source: controllers/userRegController.js</h1>
 
+    
+
+
+
+    
     <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const userRegModel = require("../model/userRegModel.js");
+/**
+ * 
+ * @param {object} req - passing req datas
+ * @param {object} res - passing res datas
+ */
+let userReg = async (req , res)=>
+{
+  
+    let email = req.body.uemail;
+    let name = req.body.uname;
+    let phonenumber = req.body.uphone;
+    let nid= req.body.unid;
+    let bday = req.body.ubirth;
+    let address = req.body.uaddress;
+    let password = req.body.password;
+    let query = await userRegModel.registerUserData(email, name, phonenumber, nid, bday, address, password);
 
-<header>
+    let data = {
+      query
+    }
+     res.render("userRegistration.ejs", {data} );
+
+
+    
+}
+let homeUserReg = async (req , res)=>
+{
     
 
-    <h2>starting--guide</h2>
-</header>
+  let pageTitle = "User Registration";
+  
+  let data = {
+      pageTitle
+      
+  }
+     res.render("userRegistration.ejs", {data} );
 
-<article>
+
     
-</article>
+}
 
-</section>
+module.exports =
+{
+  userReg,
+  homeUserReg
+}</code></pre>
+        </article>
+    </section>
+
+
+
 
 </div>
 

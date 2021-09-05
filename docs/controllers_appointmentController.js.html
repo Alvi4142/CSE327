@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Tutorial: starting--guide</title>
+    <title>JSDoc: Source: controllers/appointmentController.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,21 +17,68 @@
 
 <div id="main">
 
-    <h1 class="page-title">Tutorial: starting--guide</h1>
+    <h1 class="page-title">Source: controllers/appointmentController.js</h1>
 
+    
+
+
+
+    
     <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const appointmentModel = require("../model/appointmentModel.js");
+/**
+ * 
+ * @param {object} req - passing req data
+ * @param {object} res - passing res data
+ */
 
-<header>
+
+let appointment = async (req , res)=>
+{
+
     
+    let id = req.body.doc_id;
+    let doctor_name = req.body.doc_name;
+    let patient_name = req.body.patient_name;
+    let date = req.body.booking_date;
+    let query = await appointmentModel.appointment(id,doctor_name,date,patient_name);
 
-    <h2>starting--guide</h2>
-</header>
+    let data = {
+      query
+    }
+     res.render("appointment.ejs", {data} );
+   
 
-<article>
     
-</article>
+}
 
-</section>
+
+ let homeAppointment = async (req,res)=>{
+    
+    //let searchQuery1 = req.body.doc_id;
+    //let loginresult1 = await homeModel.getLogininfo(searchQuery1);
+    //let searchQuery2 = req.body.doc_name;
+    //let loginresult2 = await homeModel.getLogininfo(searchQuery2);
+    let pageTitle = "Appointment";
+    let data = {
+        
+        pageTitle,
+        //loginresult1,
+        //loginresult2
+    }
+    res.render("appointment.ejs",{data});
+}
+
+module.exports = {
+    appointment,
+    homeAppointment
+}</code></pre>
+        </article>
+    </section>
+
+
+
 
 </div>
 
